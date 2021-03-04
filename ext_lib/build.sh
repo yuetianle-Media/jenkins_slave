@@ -35,6 +35,10 @@ cd ..
 tar -zxvf googletest-release-1.10.0.tar.gz
 cd googletest-release-1.10.0
 cmake . &&make install
+cd ..
+tar -zxvf zstd-1.4.5.tar.gz
+cd zstd-1.4.5
+make install
 echo -e "build fininshed!!!!"
 
 rm -rf /root/ext_lib/*
