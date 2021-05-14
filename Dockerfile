@@ -7,6 +7,7 @@ RUN yum -y install gcc gcc-c++ make passwd openssl openssh-server lsof ftp opens
  && sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config \
  && sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config \
  && mkdir -p /var/run/sshd/ \
+ && sed -i  's/#host_key_checking/host_key_checking/' /etc/ansible/ansible.cfg \
  && useradd -u 1000 -m -s /bin/bash jenkins \
  && echo "jenkins:jenkins" | chpasswd \
  && /usr/bin/ssh-keygen -A \
