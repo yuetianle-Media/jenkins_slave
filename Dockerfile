@@ -16,4 +16,5 @@ RUN yum -y install gcc gcc-c++ make passwd openssl openssh-server lsof ftp opens
 RUN echo "123456" | passwd --stdin root
 WORKDIR "/root"
 EXPOSE 22
+
 CMD ["/usr/sbin/sshd", "-D"]
