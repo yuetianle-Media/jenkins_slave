@@ -13,7 +13,6 @@ RUN yum -y install gcc gcc-c++ make passwd openssl openssh-server lsof ftp opens
  && /usr/bin/ssh-keygen -A \
  && echo export JAVA_HOME="/`alternatives  --display java | grep best | cut -d "/" -f 2-6`" >> /etc/environment\
  && chmod a+x -R /root/ext_lib/ && /root/ext_lib/build.sh
-ENV JAVA_HOME /etc/alternatives/jre
 RUN echo "123456" | passwd --stdin root
 WORKDIR "/root"
 EXPOSE 22
